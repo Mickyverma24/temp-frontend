@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ReactMarkdown from 'react-markdown';
 
 const App = () => {
   const [content, setContent] = useState('');
@@ -7,7 +8,9 @@ const App = () => {
     // Fetch content from the public folder
     fetch('/content.txt')
       .then((response) => response.text())
-      .then((data) => setContent(data))
+      .then((data) => {
+        setContent(data);
+      })
       .catch((err) => console.error('Error fetching text file:', err));
   }, []);
 
@@ -15,7 +18,7 @@ const App = () => {
     <div>
       <h1>Crustdata Discovery And Enrichment API</h1>
       <div>
-        <p>{content}</p>
+        <ReactMarkdown>{content}</ReactMarkdown>
       </div>
     </div>
   );
