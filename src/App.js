@@ -16,9 +16,9 @@ const App = () => {
 
   return (
     <div>
-      <h1>Crustdata Discovery And Enrichment API</h1>
+      <h1>Crustdata Dataset API Detailed Examples</h1>
       <div>
-        <ReactMarkdown>{content}</ReactMarkdown>
+        {content}
       </div>
     </div>
   );
